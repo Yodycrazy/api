@@ -77,3 +77,39 @@ router.post('/', async (req, res) => {
 module.exports = router;
 
 
+
+
+/** bloque para mostrar solo un post ppor el Id 
+
+Router.get('/:postId', async (req, res) =>{
+    try {
+        const post = await Post.findById(req.params.PostId);//encontrar por ID
+        res.json(post);
+    } catch (error) {
+        res.json({message: error});
+    }
+});
+
+/** bloque para borrar un post 
+
+Router.delete('/:postId', async (req, res) =>{
+    try {
+        const removePost = await Post.remove({_id: req.params.PostId});//borrar
+        res.json(removePost);
+    } catch (error) {
+        res.json({message: error});
+    }
+});
+/** bloque para actualizar un post 
+
+Router.patch('/:postId', async (req, res) =>{
+    try {
+        const updatePost = await Post.updateOne(
+            {_id: req.params.PostId},//Actualizar de uno en uno
+            {$set: {title: req.body.title}});
+        res.json(updatePost);
+    } catch (error) {
+        res.json({message: error});
+    }
+});
+*/
