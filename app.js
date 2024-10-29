@@ -53,5 +53,5 @@ mongoose.connect(uri, clientOptions)
 
 // Iniciar el servidor
 app.listen(8080, () => {
-    console.log('Servidor escuchando en el puerto 10000');
+    console.log('Servidor escuchando en el puerto 8080');
 });
