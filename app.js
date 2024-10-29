@@ -4,9 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({
-  origin: 'https://ripe2-e8hscscsggh5f6an.eastus2-01.azurewebsites.net'
-}));
+app.use(cors());
 
 
 
